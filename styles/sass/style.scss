@@ -1,0 +1,443 @@
+
+/*General*/
+
+* {
+	margin: 0;
+	padding: 0;	
+}
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500&subset=latin-ext');
+
+$fw-200	               				: 200;
+$fw-300	                			: 300;
+$fw-400	                			: 400;
+$fw-500	                			: 500;
+
+/*Colors*/
+$color-background					: #000000;
+$color-text							: #d8d9d8;
+$color-text-link					: #606d97;
+$color-text-link-background         : #ffffff;
+$color-icon							: #999999;
+$color-hover                        : #00ff7f;
+
+/*Breakpoints*/
+$bp-desktop 						: 1200px;
+$bp-tablet 							: 800px;
+$bp-mobile 							: 500px;
+
+/*Images*/
+$image-background		: url('../../images/background.jpg');
+
+body {
+	color: $color-text;
+	background-color: $color-background; 
+	font-family: 'Montserrat', sans-serif;
+	font-size: 40px;
+	height: 100vh;
+}
+
+/*--------------------------------------------------------------------*/
+/*Home page styles*/
+
+.container-home {
+	background-image: $image-background; 
+	background-position: center;
+	background-size: cover;
+	display: -webkit-flex;	
+	display: -ms-flex;	
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;	
+	flex-direction: column;
+	-webkit-justify-content: flex-end;
+	-ms-justify-content: flex-end;
+	justify-content: flex-end;
+	box-sizing: border-box;
+	position: relative;
+	height: 100vh;
+
+	.container-content {
+		padding: 10vw 5vw;
+		overflow: hidden;
+		height: auto;
+	}
+}
+
+/*--------------------------------------------------------------------*/
+/*Navigation, menu button styles*/
+
+.container-nav {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-align-items: center;	
+	align-items: center;
+	animation: disappearance 2s;
+	opacity: 0.8;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	@media (max-width: $bp-tablet ) {
+		top: 25px;
+		right: 10px;
+	}	
+
+	.nav-items {
+		display: none;
+
+		li {
+			list-style: none;
+			font-size: 18px;
+			margin-top: 10px;
+			width: 150px;
+			border-radius: 10px;
+			text-align: center;
+			font-weight: 300;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			background-color: $color-text-link-background;
+			@media (max-width: $bp-mobile ) {
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}				
+
+			a {
+				text-decoration: none;
+				color: $color-background;
+			}
+		}
+	}
+
+	.nav-button {
+		border: none;
+		background: none;
+		padding: 57px;
+		outline: none;
+		@media (max-width: $bp-mobile ) {
+			padding-right: 10px;
+		}
+
+		.nav-img {
+			width: 70px;
+			cursor: pointer;
+		}
+	}
+}
+
+/*--------------------------------------------------------------------*/
+/*Logo container with logo*/
+
+.container-logo { 
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;	
+	flex: 1 1 auto;
+	display: -webkit-flex;	
+	display: -ms-flex;	
+	display: flex;
+	-webkit-flex-direction: column;	
+	-ms-flex-direction: column;		
+	flex-direction: column;
+	animation: disappearance 2s;
+	@media (max-width: $bp-mobile ) {
+		margin-top: 40px;
+	}
+
+	img {
+		max-width: 150px;
+		height: auto;
+		@media (max-width: $bp-tablet) {
+			max-width: 100px;
+		}
+		@media (max-width: $bp-mobile) {
+			max-width: 80px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------------*/
+/*Title and reservation online button*/
+
+.container-title { 
+	-webkit-flex: 1 1 auto;	
+	-ms-flex: 1 1 auto;	
+	flex: 1 1 auto;
+	display: -webkit-flex;
+	display: -ms-flex;		
+	display: flex;
+	-webkit-flex-direction: column;	
+	-ms-flex-direction: column;		
+	flex-direction: column;
+	justify-content: center;
+	animation: disappearance 2s;
+	@media (max-width: $bp-tablet ) {
+		max-width: none;
+	}
+
+	h1 {
+		color: $color-text;
+		font-size: 45px;
+		font-weight: $fw-300;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		@media (max-width: $bp-tablet ) {
+			font-size: 35px;
+			line-height: 40px;
+		}	
+		@media (max-width: $bp-mobile ) {
+			font-size: 28px;
+			line-height: 40px;
+		}	
+	}
+
+	a {
+		color: $color-text-link;
+		padding: 10px 20px;
+		border: 4px solid $color-text-link;
+		border-radius: 20px;
+		text-decoration: none;
+		font-weight: $fw-300;
+		width: 265px;
+		outline: none;
+		@media (max-width: $bp-mobile ) {
+			font-size: 30px;
+			width: 210px;
+			font-weight: $fw-500;
+			color: $color-text;
+			border: 4px solid $color-text;
+			&:hover {
+				color: $color-hover;
+				border: 4px solid $color-hover;
+			}
+		}	
+	}
+}
+
+/*--------------------------------------------------------------------*/
+/*Social media part*/
+
+.container-social-media { 
+	-webkit-flex: 1 1 auto;	
+	-ms-flex: 1 1 auto;	
+	flex: 1 1 auto;
+	display: -webkit-flex;
+	display: -ms-flex;		
+	display: flex;
+	-webkit-flex-direction: column;	
+	-ms-flex-direction: column;		
+	flex-direction: column;
+	margin-top: auto;
+
+	ul {
+		animation: disappearance 2s;
+
+		li {
+			display: inline-block;
+			margin-right: 8px;
+
+			a {
+				display: inline-block;
+				cursor: pointer;
+
+				img {
+					width: 45px;
+					height: 45px; 
+					padding-top:20px;
+
+				}
+			}
+		}
+	}
+}
+
+
+/*--------------------------------------------------------------------*/
+/*Tariff page styles*/
+
+.container {
+	padding: 20px 70px;
+	box-sizing: border-box;
+	background-color: $color-background;
+	height: auto;
+	width: 100%;
+
+	@media (max-width: $bp-mobile ) {
+		padding: 20px 5px;
+	}	
+
+	.container-logo-right {
+		display: flex;
+		align-items: flex-end;
+
+		a {
+			cursor: pointer;
+			outline: none;
+		}
+	}
+
+	h1 {
+		font-size: 75px;
+		padding-top: 50px;
+		@media (max-width: $bp-mobile ) {
+			font-size: 65px;
+		}	
+	}
+
+	h1, h2, h3, tr, hr {
+		animation: disappearance 2s;
+	}
+
+	h2, h3 {
+		font-size: 35px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		letter-spacing: 2px;
+	}
+
+	h3 {
+		font-size: 28px;
+		padding-bottom: 10px;
+		font-weight: $fw-300;
+	}
+
+	table {
+		width: 100%;
+		font-size: 25px;
+		font-weight: $fw-200;
+		@media (max-width: $bp-mobile ) {
+			font-size: 18px;
+		}	
+
+		.tariff__table-cell {
+			width: 60%;
+			@media (max-width: $bp-tablet ) {
+				width: 80%;
+				padding-right: 10px;
+			}	
+			@media (max-width: $bp-mobile ) {
+				width: 75%;
+				padding: 10px;
+			}	
+		}
+	}
+
+	hr {
+		margin: 50px 0 20px 0;
+		height: 0.5px;
+	}	
+}
+
+
+
+/*--------------------------------------------------------------------*/
+/*Photo slider*/
+
+	.container-gallery {
+		max-width: 1200px;
+		margin: 0 auto;
+		
+		.gallery-row {
+			width: 29%;
+			float: left;
+			margin: 2%;
+			@media (max-width: $bp-tablet ) {
+				width: 48%;
+				margin: 1%;
+			}	
+			@media (max-width: $bp-mobile ) {
+				width: 98%;
+				margin: 1%;
+			}	
+
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				width: auto;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+/*--------------------------------------------------------------------*/
+/*Contact page*/	
+
+.map-container {
+
+	h1 {
+		font-size: 60px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	div {
+		position: relative;
+		padding-bottom: 100%;
+		height: 0;
+		overflow: hidden;	
+
+		iframe {
+			position: absolute;
+			top: 30;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+}
+
+/*--------------------------------------------------------------------*/
+/*About us page*/
+
+.container-aboutus {
+	display: -webkit-flex;	
+	display: -ms-flex;	
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;	
+	flex-direction: column;
+	padding-bottom: 60px;
+
+	h2 {
+		font-weight: $fw-300;
+	}
+
+	.aboutus-photo {
+		margin-bottom: 20px;
+		max-width: 100%;
+		height: auto;
+	}
+
+	p {
+		font-size: 20px;
+		font-weight: $fw-200;
+		line-height: 1.2;
+	}
+}
+
+
+/*--------------------------------------------------------------------*/
+/*Css animation disappearance*/
+@-webkit-keyframes disappearance {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes disappearance {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes disappearance {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes disappearance {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
